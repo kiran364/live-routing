@@ -1,7 +1,5 @@
 const express = require('express')
 const app = express();
-//app.disable('etag');
-const port = 3000;
 
 app.get('/', (req, res) => { 
   res.status(200).send('Hello this is my home page is')
@@ -25,6 +23,6 @@ app.get('/user/:username', (req, res) => {
   res.send(`Hello ${user}`)
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(process.env.PORT || 3000, () => {
+  console.log("server is runing....");
 })
